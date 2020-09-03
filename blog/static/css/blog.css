@@ -2,8 +2,40 @@ body{
 font-family: 'Merriweather', serif;
 }
 
-raleway-heading{
+btn{
+font-family: 'Raleway', sans-serif!important;
+}
+
+.techfont{
 font-family: 'Raleway', sans-serif;
 }
 
+.postdate{
+  text-align: center;
+}
+
+.posttitle{
+font-family: 'Raleway', sans-serif;
+  font-size: 3em;
+  text-align: center;
+}
+
+.postcontent{
+font-family: 'Merriweather', serif;
+  font-size: 1.5em;
+}
+
+.centerstage{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-comment{
+  position: absolute;
+  right: 0px;
+}
+
+.bigbrand{
+  font-size: 1.5em;
+}
 
