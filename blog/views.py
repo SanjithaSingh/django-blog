@@ -19,12 +19,15 @@ class AboutView(TemplateView):
 class PostListView(ListView):
     model = Post
     template_name = 'blog/post_list.html'
+    context_object_name = 'post_list'
+
     def get_queryset(self):
         return Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
 
 
 class PostDetailView(DetailView):
     model = Post
+    template_name = 'blog/post_detail.html'
 
 
 class CreatePostView(LoginRequiredMixin, CreateView):
@@ -34,9 +37,8 @@ class CreatePostView(LoginRequiredMixin, CreateView):
     model = Post
 
     def form_valid(self, form):
-        obj = form.save(commit=False)
-        obj.author = self.request.user
-        return super(CreatePostView, self).form_valid(form)
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 class UpdatePostView(LoginRequiredMixin, UpdateView):
